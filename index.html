@@ -40,13 +40,14 @@ const colorHex = (name, fallback = "#374151") => COLOR_HEX[name] || fallback;
 
 function DifficultyChip({ level }) {
   const tone = level === "Hard" ? "hard" : level === "Easy" ? "easy" : "normal";
-  return <span className={\`chip chip-\${tone}\`}>{level}</span>;
+ return <span className={`chip chip-${tone}`}>{level}</span>;
+
 }
 
 function HeroChip({ hero }) {
   const p = colorHex(hero.primary);
   const s = colorHex(hero.secondary, "#111827");
-  const bg = \`linear-gradient(135deg, \${p} 0%, \${s} 100%)\`;
+const bg = `linear-gradient(135deg, ${p} 0%, ${s} 100%)`;
   return (
     <div className="hero-chip" style={{ background: bg }}>
       <div className="hero-chip__title">{hero.name}</div>
@@ -258,7 +259,7 @@ function App() {
           <span className="subtitle">Leadership Challenge • Static (GH Pages)</span>
         </h1>
         <div className="meta-row">
-          <div className="progress"><div className="progress__bar" style={{ width: \`\${progressPct}%\` }} /></div>
+          <div className="progress"><div className="progress__bar" style={{ width: `${progressPct}%` }} /></div>
           <div className="pill">Passed&nbsp;<strong>{passedCount}</strong>/{scenarios.length || 0}</div>
           {!!usedIndices.length && <div className="pill">Round&nbsp;<strong>{usedIndices.length}</strong></div>}
         </div>
