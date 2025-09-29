@@ -1,21 +1,382 @@
 [
   {
-    "name": "Demo Scenario",
-    "explainer": "Replace scenarios.json with your real file.",
+    "name": "Merger & Acquisition",
+    "explainer": "Two organisations are merging. Align cultures and keep employees engaged.",
     "difficulty": "Easy",
     "thresholds": {
-      "Border Crosser": 5,
-      "Change Maker": 5,
-      "Communicator": 5,
-      "Growth Driver": 5,
-      "Judgement Maker": 5,
-      "Navigator": 5,
-      "Pressure Player": 5,
-      "Purpose Creator": 5,
-      "Results Driver": 5,
-      "Self-Grower": 5,
-      "Team Builder": 5,
-      "Trust Builder": 5
+      "Border Crosser": 18,
+      "Change Maker": 20,
+      "Communicator": 10,
+      "Growth Driver": 6,
+      "Judgement Maker": 16,
+      "Navigator": 11,
+      "Pressure Player": 7,
+      "Purpose Creator": 15,
+      "Results Driver": 8,
+      "Self-Grower": 7,
+      "Team Builder": 18,
+      "Trust Builder": 15
+    }
+  },
+  {
+    "name": "AI Disruption",
+    "explainer": "A disruptive new AI changes the market. Adapt quickly and reassure employees.",
+    "difficulty": "Easy",
+    "thresholds": {
+      "Border Crosser": 6,
+      "Change Maker": 18,
+      "Communicator": 7,
+      "Growth Driver": 7,
+      "Judgement Maker": 10,
+      "Navigator": 18,
+      "Pressure Player": 11,
+      "Purpose Creator": 7,
+      "Results Driver": 15,
+      "Self-Grower": 11,
+      "Team Builder": 14,
+      "Trust Builder": 10
+    }
+  },
+  {
+    "name": "Global Crisis",
+    "explainer": "Uncertainty spreads worldwide. Steady operations and protect people.",
+    "difficulty": "Easy",
+    "thresholds": {
+      "Border Crosser": 14,
+      "Change Maker": 9,
+      "Communicator": 7,
+      "Growth Driver": 7,
+      "Judgement Maker": 6,
+      "Navigator": 15,
+      "Pressure Player": 6,
+      "Purpose Creator": 15,
+      "Results Driver": 8,
+      "Self-Grower": 7,
+      "Team Builder": 20,
+      "Trust Builder": 6
+    }
+  },
+  {
+    "name": "Talent Shortage",
+    "explainer": "Competition for talent is fierce. Retain and develop people.",
+    "difficulty": "Easy",
+    "thresholds": {
+      "Border Crosser": 9,
+      "Change Maker": 12,
+      "Communicator": 15,
+      "Growth Driver": 12,
+      "Judgement Maker": 11,
+      "Navigator": 10,
+      "Pressure Player": 7,
+      "Purpose Creator": 12,
+      "Results Driver": 10,
+      "Self-Grower": 11,
+      "Team Builder": 25,
+      "Trust Builder": 18
+    }
+  },
+  {
+    "name": "Competitive Market Entry",
+    "explainer": "A new rival appears. Differentiate and move fast.",
+    "difficulty": "Easy",
+    "thresholds": {
+      "Border Crosser": 12,
+      "Change Maker": 14,
+      "Communicator": 8,
+      "Growth Driver": 14,
+      "Judgement Maker": 15,
+      "Navigator": 20,
+      "Pressure Player": 10,
+      "Purpose Creator": 11,
+      "Results Driver": 20,
+      "Self-Grower": 17,
+      "Team Builder": 10,
+      "Trust Builder": 8
+    }
+  },
+  {
+    "name": "Regulatory Crackdown",
+    "explainer": "New laws disrupt your business model. Leaders must respond.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 21,
+      "Change Maker": 11,
+      "Communicator": 12,
+      "Growth Driver": 12,
+      "Judgement Maker": 20,
+      "Navigator": 20,
+      "Pressure Player": 18,
+      "Purpose Creator": 13,
+      "Results Driver": 14,
+      "Self-Grower": 18,
+      "Team Builder": 12,
+      "Trust Builder": 13
+    }
+  },
+  {
+    "name": "Cyber Attack",
+    "explainer": "Systems are compromised. Respond decisively under pressure.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 12,
+      "Change Maker": 13,
+      "Communicator": 14,
+      "Growth Driver": 16,
+      "Judgement Maker": 22,
+      "Navigator": 23,
+      "Pressure Player": 30,
+      "Purpose Creator": 13,
+      "Results Driver": 17,
+      "Self-Grower": 13,
+      "Team Builder": 16,
+      "Trust Builder": 10
+    }
+  },
+  {
+    "name": "Sustainability Push",
+    "explainer": "Stakeholders demand greener operations. Embed purpose and innovation.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 16,
+      "Change Maker": 15,
+      "Communicator": 12,
+      "Growth Driver": 16,
+      "Judgement Maker": 14,
+      "Navigator": 13,
+      "Pressure Player": 17,
+      "Purpose Creator": 30,
+      "Results Driver": 17,
+      "Self-Grower": 10,
+      "Team Builder": 17,
+      "Trust Builder": 13
+    }
+  },
+  {
+    "name": "Digital Transformation",
+    "explainer": "Tech change accelerates. Leaders must adapt processes and people.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 16,
+      "Change Maker": 30,
+      "Communicator": 21,
+      "Growth Driver": 16,
+      "Judgement Maker": 17,
+      "Navigator": 30,
+      "Pressure Player": 11,
+      "Purpose Creator": 13,
+      "Results Driver": 22,
+      "Self-Grower": 12,
+      "Team Builder": 16,
+      "Trust Builder": 16
+    }
+  },
+  {
+    "name": "Reputation Scandal",
+    "explainer": "Trust is broken. Leaders must communicate and rebuild reputation.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 12,
+      "Change Maker": 18,
+      "Communicator": 31,
+      "Growth Driver": 16,
+      "Judgement Maker": 16,
+      "Navigator": 15,
+      "Pressure Player": 26,
+      "Purpose Creator": 11,
+      "Results Driver": 14,
+      "Self-Grower": 11,
+      "Team Builder": 10,
+      "Trust Builder": 31
+    }
+  },
+  {
+    "name": "Rapid Growth",
+    "explainer": "The business scales quickly. Manage chaos and sustain performance.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 14,
+      "Change Maker": 26,
+      "Communicator": 20,
+      "Growth Driver": 29,
+      "Judgement Maker": 10,
+      "Navigator": 18,
+      "Pressure Player": 10,
+      "Purpose Creator": 11,
+      "Results Driver": 17,
+      "Self-Grower": 12,
+      "Team Builder": 15,
+      "Trust Builder": 19
+    }
+  },
+  {
+    "name": "Boardroom Coup",
+    "explainer": "Leadership faces internal challenge. Navigate politics and vision.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 16,
+      "Change Maker": 15,
+      "Communicator": 12,
+      "Growth Driver": 12,
+      "Judgement Maker": 15,
+      "Navigator": 15,
+      "Pressure Player": 22,
+      "Purpose Creator": 20,
+      "Results Driver": 14,
+      "Self-Grower": 19,
+      "Team Builder": 17,
+      "Trust Builder": 12
+    }
+  },
+  {
+    "name": "Customer Exodus",
+    "explainer": "Key customers leave. Leaders must win back loyalty.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 15,
+      "Change Maker": 17,
+      "Communicator": 23,
+      "Growth Driver": 21,
+      "Judgement Maker": 14,
+      "Navigator": 17,
+      "Pressure Player": 13,
+      "Purpose Creator": 15,
+      "Results Driver": 13,
+      "Self-Grower": 11,
+      "Team Builder": 14,
+      "Trust Builder": 22
+    }
+  },
+  {
+    "name": "Global Expansion",
+    "explainer": "Entering new markets. Leaders must cross borders and adapt cultures.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 21,
+      "Change Maker": 21,
+      "Communicator": 14,
+      "Growth Driver": 18,
+      "Judgement Maker": 12,
+      "Navigator": 11,
+      "Pressure Player": 13,
+      "Purpose Creator": 11,
+      "Results Driver": 11,
+      "Self-Grower": 17,
+      "Team Builder": 12,
+      "Trust Builder": 17
+    }
+  },
+  {
+    "name": "Cultural Misalignment",
+    "explainer": "Teams clash across cultures. Leaders must harmonise.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 15,
+      "Change Maker": 22,
+      "Communicator": 21,
+      "Growth Driver": 10,
+      "Judgement Maker": 10,
+      "Navigator": 16,
+      "Pressure Player": 11,
+      "Purpose Creator": 13,
+      "Results Driver": 17,
+      "Self-Grower": 13,
+      "Team Builder": 28,
+      "Trust Builder": 16
+    }
+  },
+  {
+    "name": "Innovation Stagnation",
+    "explainer": "Creativity dries up. Leaders must spark change.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 12,
+      "Change Maker": 24,
+      "Communicator": 12,
+      "Growth Driver": 12,
+      "Judgement Maker": 10,
+      "Navigator": 19,
+      "Pressure Player": 11,
+      "Purpose Creator": 24,
+      "Results Driver": 21,
+      "Self-Grower": 15,
+      "Team Builder": 15,
+      "Trust Builder": 17
+    }
+  },
+  {
+    "name": "Succession Crisis",
+    "explainer": "Key leader exits suddenly. The team must adapt.",
+    "difficulty": "Normal",
+    "thresholds": {
+      "Border Crosser": 21,
+      "Change Maker": 11,
+      "Communicator": 16,
+      "Growth Driver": 17,
+      "Judgement Maker": 10,
+      "Navigator": 12,
+      "Pressure Player": 20,
+      "Purpose Creator": 11,
+      "Results Driver": 21,
+      "Self-Grower": 10,
+      "Team Builder": 19,
+      "Trust Builder": 16
+    }
+  },
+  {
+    "name": "Supply Chain Shock",
+    "explainer": "Suppliers collapse. Leaders must stabilise operations.",
+    "difficulty": "Hard",
+    "thresholds": {
+      "Border Crosser": 25,
+      "Change Maker": 14,
+      "Communicator": 18,
+      "Growth Driver": 25,
+      "Judgement Maker": 16,
+      "Navigator": 16,
+      "Pressure Player": 25,
+      "Purpose Creator": 20,
+      "Results Driver": 25,
+      "Self-Grower": 19,
+      "Team Builder": 23,
+      "Trust Builder": 20
+    }
+  },
+  {
+    "name": "Shareholder Revolt",
+    "explainer": "Investors demand change. Leaders must balance results and ethics.",
+    "difficulty": "Hard",
+    "thresholds": {
+      "Border Crosser": 19,
+      "Change Maker": 23,
+      "Communicator": 17,
+      "Growth Driver": 30,
+      "Judgement Maker": 28,
+      "Navigator": 22,
+      "Pressure Player": 27,
+      "Purpose Creator": 14,
+      "Results Driver": 29,
+      "Self-Grower": 17,
+      "Team Builder": 20,
+      "Trust Builder": 19
+    }
+  },
+  {
+    "name": "Employee Burnout",
+    "explainer": "Exhaustion spreads. Leaders must restore wellbeing and productivity.",
+    "difficulty": "Hard",
+    "thresholds": {
+      "Border Crosser": 21,
+      "Change Maker": 27,
+      "Communicator": 32,
+      "Growth Driver": 20,
+      "Judgement Maker": 16,
+      "Navigator": 19,
+      "Pressure Player": 20,
+      "Purpose Creator": 19,
+      "Results Driver": 25,
+      "Self-Grower": 16,
+      "Team Builder": 32,
+      "Trust Builder": 30
     }
   }
 ]
