@@ -97,18 +97,40 @@ function App() {
   const [cardsData, setCardsData] = React.useState([]);
   const [scenarios, setScenarios] = React.useState([]);
 
+  // Leaderboard
   React.useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("leaderboardData") || "[]");
     stored.sort((a, b) => b.score - a.score);
     setLeaderboard(stored);
   }, []);
 
+  // Cache-busted data fetch + shape checks
   React.useEffect(() => {
-    fetch("cardsData.json").then(r => r.json()).then(setCardsData).catch(() => setCardsData([]));
-    fetch("scenarios.json").then(r => r.json()).then(setScenarios).catch(() => setScenarios([]));
+    const bust = `?v=${Date.now()}`;
+    Promise.all([
+      fetch(`cardsData.json${bust}`).then(r => r.json()),
+      fetch(`scenarios.json${bust}`).then(r => r.json())
+    ])
+    .then(([cards, scens]) => {
+      console.log("cardsData length:", Array.isArray(cards) ? cards.length : "(not an array)");
+      if (!Array.isArray(cards)) {
+        alert("cardsData.json must be a TOP-LEVEL JSON ARRAY like [ {...}, {...} ].");
+        setCardsData([]);
+      } else {
+        setCardsData(cards);
+      }
+      setScenarios(Array.isArray(scens) ? scens : []);
+    })
+    .catch(err => {
+      console.error("Failed to load data files", err);
+      setCardsData([]);
+      setScenarios([]);
+    });
   }, []);
 
+  // Normalize uploaded team into { name, cards:[{id:number} x5] }
   function normalizeUploadedTeam(raw) {
+    // Already in {name, cards}
     if (raw && Array.isArray(raw.cards)) {
       return {
         name: raw.name || "",
@@ -117,6 +139,7 @@ function App() {
           .filter(c => Number.isFinite(c.id))
       };
     }
+    // Array of hero objects
     if (Array.isArray(raw)) {
       const toNum = (x) => {
         if (Number.isFinite(x)) return x;
@@ -131,9 +154,17 @@ function App() {
     return null;
   }
 
+  // Upload handler with guards & diagnostics
   const handleFileUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    // Guard: ensure data loaded
+    if (!cardsData || cardsData.length === 0) {
+      alert("Still loading cardsData.json — please wait a second and try again.");
+      return;
+    }
+
     const reader = new FileReader();
     reader.onload = (event) => {
       try {
@@ -141,7 +172,7 @@ function App() {
         const normalized = normalizeUploadedTeam(raw);
 
         if (!normalized || !Array.isArray(normalized.cards)) {
-          alert("Invalid team file format. Expected either { name, cards:[{id}] } or an array of hero objects.");
+          alert("Invalid team file. Expected either { name, cards:[{id}] } or an array of hero objects.");
           return;
         }
 
@@ -150,6 +181,7 @@ function App() {
           return;
         }
 
+        // Resolve IDs to heroes
         const loadedTeam = normalized.cards
           .map(c => cardsData.find(h => h.id === c.id))
           .filter(Boolean);
@@ -158,6 +190,9 @@ function App() {
           const requestedIds = normalized.cards.map(c => c.id);
           const foundIds = new Set(loadedTeam.map(h => h.id));
           const missing = requestedIds.filter(id => !foundIds.has(id));
+          console.warn("Requested IDs:", requestedIds);
+          console.warn("Loaded cardsData length:", cardsData.length);
+          console.warn("First 10 IDs in cardsData:", cardsData.slice(0,10).map(h => h.id));
           alert("Some hero IDs were not found in cardsData.json: " + missing.join(", "));
           return;
         }
@@ -165,6 +200,7 @@ function App() {
         setUserName(normalized.name || "");
         setTeam(loadedTeam);
 
+        // Start the game
         const firstIndex = Math.floor(Math.random() * (scenarios.length || 1));
         setCurrentScenario(scenarios[firstIndex]);
         setUsedIndices([firstIndex]);
