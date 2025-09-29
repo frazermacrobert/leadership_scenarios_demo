@@ -40,14 +40,13 @@ const colorHex = (name, fallback = "#374151") => COLOR_HEX[name] || fallback;
 
 function DifficultyChip({ level }) {
   const tone = level === "Hard" ? "hard" : level === "Easy" ? "easy" : "normal";
- return <span className={`chip chip-${tone}`}>{level}</span>;
-
+  return <span className={`chip chip-${tone}`}>{level}</span>;
 }
 
 function HeroChip({ hero }) {
   const p = colorHex(hero.primary);
   const s = colorHex(hero.secondary, "#111827");
-const bg = `linear-gradient(135deg, ${p} 0%, ${s} 100%)`;
+  const bg = `linear-gradient(135deg, ${p} 0%, ${s} 100%)`;
   return (
     <div className="hero-chip" style={{ background: bg }}>
       <div className="hero-chip__title">{hero.name}</div>
@@ -105,14 +104,11 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    // Load bundled data files (you can replace these with your own)
     fetch("cardsData.json").then(r => r.json()).then(setCardsData).catch(() => setCardsData([]));
     fetch("scenarios.json").then(r => r.json()).then(setScenarios).catch(() => setScenarios([]));
   }, []);
 
-  // --- NEW: helper to normalize uploaded data into { name, cards: [{id: number} * 5] } ---
   function normalizeUploadedTeam(raw) {
-    // Case 1: already correct shape
     if (raw && Array.isArray(raw.cards)) {
       return {
         name: raw.name || "",
@@ -121,8 +117,6 @@ function App() {
           .filter(c => Number.isFinite(c.id))
       };
     }
-
-    // Case 2: array of hero objects
     if (Array.isArray(raw)) {
       const toNum = (x) => {
         if (Number.isFinite(x)) return x;
@@ -132,17 +126,11 @@ function App() {
       const ids = raw
         .map(h => Number.isFinite(h?.number) ? h.number : toNum(h?.id))
         .filter(n => Number.isFinite(n));
-
-      return {
-        name: "Player One",
-        cards: ids.map(n => ({ id: n }))
-      };
+      return { name: "Player One", cards: ids.map(n => ({ id: n })) };
     }
-
     return null;
   }
 
-  // --- UPDATED: handleFileUpload accepts both formats and validates thoroughly ---
   const handleFileUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -157,18 +145,15 @@ function App() {
           return;
         }
 
-        // Require exactly 5
         if (normalized.cards.length !== 5) {
-          alert(\`Expected 5 heroes, found \${normalized.cards.length}. Please choose exactly five.\`);
+          alert(`Expected 5 heroes, found ${normalized.cards.length}. Please choose exactly five.`);
           return;
         }
 
-        // Map IDs to actual hero objects in cardsData
         const loadedTeam = normalized.cards
           .map(c => cardsData.find(h => h.id === c.id))
           .filter(Boolean);
 
-        // Report any missing IDs for easier debugging
         if (loadedTeam.length !== 5) {
           const requestedIds = normalized.cards.map(c => c.id);
           const foundIds = new Set(loadedTeam.map(h => h.id));
@@ -180,7 +165,6 @@ function App() {
         setUserName(normalized.name || "");
         setTeam(loadedTeam);
 
-        // Start the game
         const firstIndex = Math.floor(Math.random() * (scenarios.length || 1));
         setCurrentScenario(scenarios[firstIndex]);
         setUsedIndices([firstIndex]);
@@ -217,13 +201,11 @@ function App() {
   const handleChallenge = () => {
     if (!currentScenario || team.length === 0) return;
     const totals = Object.keys(currentScenario.thresholds).reduce((acc, k) => ({ ...acc, [k]: 0 }), {});
-
     team.forEach((hero) => {
       for (const [cat, val] of Object.entries(hero.scores)) {
         if (totals.hasOwnProperty(cat)) totals[cat] += val;
       }
     });
-
     for (const [cat, need] of Object.entries(currentScenario.thresholds)) {
       if ((totals[cat] || 0) < need) {
         setStatus("failed");
