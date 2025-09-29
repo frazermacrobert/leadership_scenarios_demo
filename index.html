@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Values Cards — GH Pages</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- React + ReactDOM (production) -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel Standalone to transpile JSX in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+const COLOR_HEX = {
+  Teal: "#00B3A4",
+  Bronze: "#B08D57",
+  Purple: "#6B5BFF",
+  Gold: "#E6B800",
+  "Navy Blue": "#1E3A8A",
+  Silver: "#BFC7D5",
+  Orange: "#FF7A00",
+  Lavender: "#B7A7FF",
+  "Royal Blue": "#3B5BDB",
+  "Bright Red": "#FF3B30",
+  Yellow: "#FFD60A",
+  Magenta: "#FF2D55",
+  Black: "#1A1A1A",
+  Blue: "#2563EB",
+  Gray: "#9AA1AF",
+  Red: "#EF4444",
+  White: "#FFFFFF",
+  Green: "#16A34A",
+  Brown: "#8B5E3C",
+  Pink: "#EC4899",
+};
+const colorHex = (name, fallback = "#374151") => COLOR_HEX[name] || fallback;
+
+function DifficultyChip({ level }) {
+  const tone = level === "Hard" ? "hard" : level === "Easy" ? "easy" : "normal";
+  return <span className={`chip chip-${tone}`}>{level}</span>;
+}
+
+function HeroChip({ hero }) {
+  const p = colorHex(hero.primary);
+  const s = colorHex(hero.secondary, "#111827");
+  const bg = `linear-gradient(135deg, ${p} 0%, ${s} 100%)`;
+  return (
+    <div className="hero-chip" style={{ background: bg }}>
+      <div className="hero-chip__title">{hero.name}</div>
+      <div className="hero-chip__sub">{hero.category}</div>
+    </div>
+  );
+}
+
+function Leaderboard({ entries }) {
+  if (!entries || entries.length === 0) return null;
+  return (
+    <div style={{ marginTop: "2em" }}>
+      <h3>Leaderboard</h3>
+      <table width="100%" border="1" cellPadding="6" style={{ borderCollapse: "collapse" }}>
+        <thead style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
+          <tr>
+            <th align="left">Name</th>
+            <th align="right">Scenarios&nbsp;Passed</th>
+            <th align="left">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {entries.map((entry, i) => {
+            const d = new Date(entry.date);
+            const stamp = d.toLocaleDateString() + " " + d.toLocaleTimeString();
+            return (
+              <tr key={i}>
+                <td>{entry.name}</td>
+                <td align="right">{entry.score}</td>
+                <td>{stamp}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function App() {
+  const [team, setTeam] = React.useState([]);
+  const [userName, setUserName] = React.useState("");
+  const [currentScenario, setCurrentScenario] = React.useState(null);
+  const [usedIndices, setUsedIndices] = React.useState([]);
+  const [passedCount, setPassedCount] = React.useState(0);
+  const [status, setStatus] = React.useState("start"); // start | playing | passed | failed | gameWon
+  const [leaderboard, setLeaderboard] = React.useState([]);
+  const [cardsData, setCardsData] = React.useState([]);
+  const [scenarios, setScenarios] = React.useState([]);
+
+  React.useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("leaderboardData") || "[]");
+    stored.sort((a, b) => b.score - a.score);
+    setLeaderboard(stored);
+  }, []);
+
+  React.useEffect(() => {
+    // Load bundled data files (you can replace these with your own)
+    fetch("cardsData.json").then(r => r.json()).then(setCardsData).catch(() => setCardsData([]));
+    fetch("scenarios.json").then(r => r.json()).then(setScenarios).catch(() => setScenarios([]));
+  }, []);
+
+  const handleFileUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        const data = JSON.parse(event.target.result);
+        if (!data.cards || !Array.isArray(data.cards)) {
+          alert("Invalid team file format.");
+          return;
+        }
+        setUserName(data.name || "");
+        const loadedTeam = data.cards
+          .map((c) => cardsData.find((h) => h.id === c.id))
+          .filter(Boolean);
+
+        if (loadedTeam.length !== 5) {
+          alert(`Expected 5 heroes, found ${loadedTeam.length}. Please upload a valid team export.`);
+          return;
+        }
+
+        setTeam(loadedTeam);
+
+        const firstIndex = Math.floor(Math.random() * (scenarios.length || 1));
+        setCurrentScenario(scenarios[firstIndex]);
+        setUsedIndices([firstIndex]);
+        setPassedCount(0);
+        setStatus("playing");
+      } catch (err) {
+        console.error(err);
+        alert("Failed to read JSON. Check your team file and try again.");
+      }
+    };
+    reader.readAsText(file);
+  };
+
+  const drawScenario = () => {
+    if (!scenarios.length) return;
+    if (usedIndices.length >= scenarios.length) {
+      setStatus("gameWon");
+      const entry = { name: userName || "Anonymous", score: passedCount, date: new Date().toISOString() };
+      const updated = [...leaderboard, entry].sort((a, b) => b.score - a.score);
+      localStorage.setItem("leaderboardData", JSON.stringify(updated));
+      setLeaderboard(updated);
+      return;
+    }
+    let idx;
+    do {
+      idx = Math.floor(Math.random() * scenarios.length);
+    } while (usedIndices.includes(idx));
+
+    setCurrentScenario(scenarios[idx]);
+    setUsedIndices((prev) => [...prev, idx]);
+    setStatus("playing");
+  };
+
+  const handleChallenge = () => {
+    if (!currentScenario || team.length === 0) return;
+    const totals = Object.keys(currentScenario.thresholds).reduce((acc, k) => ({ ...acc, [k]: 0 }), {});
+
+    team.forEach((hero) => {
+      for (const [cat, val] of Object.entries(hero.scores)) {
+        if (totals.hasOwnProperty(cat)) totals[cat] += val;
+      }
+    });
+
+    for (const [cat, need] of Object.entries(currentScenario.thresholds)) {
+      if ((totals[cat] || 0) < need) {
+        setStatus("failed");
+        const entry = { name: userName || "Anonymous", score: passedCount, date: new Date().toISOString() };
+        const updated = [...leaderboard, entry].sort((a, b) => b.score - a.score);
+        localStorage.setItem("leaderboardData", JSON.stringify(updated));
+        setLeaderboard(updated);
+        return;
+      }
+    }
+    setPassedCount((n) => n + 1);
+    setStatus("passed");
+  };
+
+  const handleNextScenario = () => drawScenario();
+
+  const handleRestart = () => {
+    if (team.length === 0) { setStatus("start"); return; }
+    const first = Math.floor(Math.random() * (scenarios.length || 1));
+    setCurrentScenario(scenarios[first]);
+    setUsedIndices([first]);
+    setPassedCount(0);
+    setStatus("playing");
+  };
+
+  const progressPct = scenarios.length ? Math.round((passedCount / scenarios.length) * 100) : 0;
+
+  return (
+    <div className="container">
+      <header className="header">
+        <h1 className="title">
+          <span className="title-gradient">Values Cards</span>
+          <span className="subtitle">Leadership Challenge • Static (GH Pages)</span>
+        </h1>
+        <div className="meta-row">
+          <div className="progress"><div className="progress__bar" style={{ width: `${progressPct}%` }} /></div>
+          <div className="pill">Passed&nbsp;<strong>{passedCount}</strong>/{scenarios.length || 0}</div>
+          {!!usedIndices.length && <div className="pill">Round&nbsp;<strong>{usedIndices.length}</strong></div>}
+        </div>
+      </header>
+
+      {status === "start" && (
+        <section className="grid">
+          <div className="card glass">
+            <h2>Load your team</h2>
+            <p className="muted">Upload the exported JSON from Phase 1 (exactly five heroes).</p>
+            <label className="file">
+              <input type="file" accept=".json" onChange={handleFileUpload} />
+              <span className="file__button">Choose team JSON</span>
+            </label>
+            <p className="tiny muted">Leaderboard is saved locally in your browser.</p>
+          </div>
+          <div className="card tips">
+            <h3>How it works</h3>
+            <ul>
+              <li>We fetch <code>cardsData.json</code> and <code>scenarios.json</code> from this repo.</li>
+              <li>Upload your <strong>team JSON</strong> (5 heroes).</li>
+              <li>Challenge scenarios until you win or fail.</li>
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {team.length > 0 && status !== "start" && (
+        <section className="grid">
+          <div className="card glass">
+            <div className="section-head">
+              <h2>Your Team {userName ? <span className="muted">• {userName}</span> : null}</h2>
+              <label className="linkish">
+                <input type="file" accept=".json" onChange={handleFileUpload} style={{ display: "none" }} />
+                <span>Change team</span>
+              </label>
+            </div>
+            <div className="hero-list">
+              {team.map((h) => <HeroChip key={h.id} hero={h} />)}
+            </div>
+          </div>
+
+          {currentScenario && (
+            <div className="card glass scenario">
+              <div className="section-head">
+                <div className="scenario-title">
+                  <h2>{currentScenario.name}</h2>
+                  <DifficultyChip level={currentScenario.difficulty} />
+                </div>
+              </div>
+              <p className="scenario-text">{currentScenario.explainer}</p>
+
+              {status === "playing" && (
+                <div className="actions">
+                  <button className="btn btn-primary" onClick={handleChallenge}>⚡ Challenge</button>
+                </div>
+              )}
+
+              {status === "passed" && (
+                <div className="result pass">
+                  <div className="result__badge">✅ Pass</div>
+                  <p>Nice! Your team met every threshold.</p>
+                  <button className="btn btn-ghost" onClick={handleNextScenario}>Next scenario →</button>
+                </div>
+              )}
+
+              {status === "failed" && (
+                <div className="result fail">
+                  <div className="result__badge">❌ Fail — Game over</div>
+                  <p>You passed {passedCount} scenario{passedCount === 1 ? "" : "s"}.</p>
+                  <div className="actions">
+                    <button className="btn btn-danger" onClick={handleRestart}>Try again</button>
+                  </div>
+                </div>
+              )}
+
+              {status === "gameWon" && (
+                <div className="result win">
+                  <div className="result__badge">🏆 All scenarios cleared!</div>
+                  <p>Your leadership squad is legendary.</p>
+                  <div className="actions">
+                    <button className="btn btn-ghost" onClick={handleRestart}>Play again</button>
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </section>
+      )}
+
+      {(status === "failed" || status === "gameWon") && (
+        <section className="grid">
+          <div className="card glass">
+            <h2>Leaderboard</h2>
+            <Leaderboard entries={leaderboard} />
+          </div>
+        </section>
+      )}
+
+      <footer className="footer"><span>Made with 💛 for superheroes in leadership</span></footer>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+    </script>
+  </body>
+</html>

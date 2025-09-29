@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Demo Scenario",
+    "explainer": "Replace scenarios.json with your real file.",
+    "difficulty": "Easy",
+    "thresholds": {
+      "Border Crosser": 5,
+      "Change Maker": 5,
+      "Communicator": 5,
+      "Growth Driver": 5,
+      "Judgement Maker": 5,
+      "Navigator": 5,
+      "Pressure Player": 5,
+      "Purpose Creator": 5,
+      "Results Driver": 5,
+      "Self-Grower": 5,
+      "Team Builder": 5,
+      "Trust Builder": 5
+    }
+  }
+]

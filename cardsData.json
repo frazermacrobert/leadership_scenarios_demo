@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "category": "Example",
+    "name": "Sample Hero",
+    "tagline": "Demo",
+    "description": "Replace this file with your real cardsData.json",
+    "primary": "Teal",
+    "secondary": "Purple",
+    "scores": {
+      "Border Crosser": 5,
+      "Change Maker": 5,
+      "Communicator": 5,
+      "Growth Driver": 5,
+      "Judgement Maker": 5,
+      "Navigator": 5,
+      "Pressure Player": 5,
+      "Purpose Creator": 5,
+      "Results Driver": 5,
+      "Self-Grower": 5,
+      "Team Builder": 5,
+      "Trust Builder": 5
+    }
+  }
+]
