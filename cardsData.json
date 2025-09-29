@@ -1,25 +1,542 @@
 [
   {
     "id": 1,
-    "category": "Example",
-    "name": "Sample Hero",
-    "tagline": "Demo",
-    "description": "Replace this file with your real cardsData.json",
-    "primary": "Teal",
-    "secondary": "Purple",
-    "scores": {
-      "Border Crosser": 5,
-      "Change Maker": 5,
-      "Communicator": 5,
-      "Growth Driver": 5,
-      "Judgement Maker": 5,
-      "Navigator": 5,
-      "Pressure Player": 5,
-      "Purpose Creator": 5,
-      "Results Driver": 5,
-      "Self-Grower": 5,
-      "Team Builder": 5,
-      "Trust Builder": 5
-    }
+    "category": "Border Crosser",
+    "heroName": "The Explorer",
+    "tagline": "Seeks out new perspectives",
+    "description": "Seeks out fresh perspectives and new viewpoints.",
+    "primaryColor": "Teal",
+    "secondaryColor": "Bronze"
+  },
+  {
+    "id": 2,
+    "category": "Border Crosser",
+    "heroName": "The Connector",
+    "tagline": "Links people to shared goals",
+    "description": "Brings people together to create win-win solutions.",
+    "primaryColor": "Teal",
+    "secondaryColor": "Bronze"
+  },
+  {
+    "id": 3,
+    "category": "Border Crosser",
+    "heroName": "The Diplomat",
+    "tagline": "Navigates cultures with care",
+    "description": "Navigates cultures with agility and respect.",
+    "primaryColor": "Teal",
+    "secondaryColor": "Bronze"
+  },
+  {
+    "id": 4,
+    "category": "Border Crosser",
+    "heroName": "The Networker",
+    "tagline": "Builds allies everywhere",
+    "description": "Builds wide, lasting networks inside and outside the organisation.",
+    "primaryColor": "Teal",
+    "secondaryColor": "Bronze"
+  },
+  {
+    "id": 5,
+    "category": "Border Crosser",
+    "heroName": "The Bridge",
+    "tagline": "Joins worlds together",
+    "description": "Translates across boundaries, making collaboration seamless between teams, cultures, and disciplines.",
+    "primaryColor": "Teal",
+    "secondaryColor": "Bronze"
+  },
+  {
+    "id": 6,
+    "category": "Change Maker",
+    "heroName": "The Catalyst",
+    "tagline": "Always pushing for progress",
+    "description": "Always driving progress and improvement.",
+    "primaryColor": "Bright Red",
+    "secondaryColor": "Yellow"
+  },
+  {
+    "id": 7,
+    "category": "Change Maker",
+    "heroName": "The Disruptor",
+    "tagline": "Breaks rules to spark progress",
+    "description": "Challenges the status quo with bold, creative thinking.",
+    "primaryColor": "Bright Red",
+    "secondaryColor": "Yellow"
+  },
+  {
+    "id": 8,
+    "category": "Change Maker",
+    "heroName": "The Trailblazer",
+    "tagline": "Creates safe space for bold ideas",
+    "description": "Creates safe spaces for risk-taking, learning fast, and innovating.",
+    "primaryColor": "Bright Red",
+    "secondaryColor": "Yellow"
+  },
+  {
+    "id": 9,
+    "category": "Change Maker",
+    "heroName": "The Change-Guide",
+    "tagline": "Leads others smoothly through change",
+    "description": "Helps people through change, easing resistance and building buy-in.",
+    "primaryColor": "Bright Red",
+    "secondaryColor": "Yellow"
+  },
+  {
+    "id": 10,
+    "category": "Change Maker",
+    "heroName": "The Challenger",
+    "tagline": "Faces tough calls without fear",
+    "description": "Shows courage to take bold, sometimes unpopular decisions.",
+    "primaryColor": "Bright Red",
+    "secondaryColor": "Yellow"
+  },
+  {
+    "id": 11,
+    "category": "Communicator",
+    "heroName": "The Orator",
+    "tagline": "Inspires with words that land",
+    "description": "Speaks with clarity and inspiration.",
+    "primaryColor": "Purple",
+    "secondaryColor": "Gold"
+  },
+  {
+    "id": 12,
+    "category": "Communicator",
+    "heroName": "The Pivot",
+    "tagline": "Adapts style, wins the room",
+    "description": "Adapts style to influence any audience.",
+    "primaryColor": "Purple",
+    "secondaryColor": "Gold"
+  },
+  {
+    "id": 13,
+    "category": "Communicator",
+    "heroName": "The Messenger",
+    "tagline": "Keeps everyone in the loop",
+    "description": "Shares vital information openly and on time.",
+    "primaryColor": "Purple",
+    "secondaryColor": "Gold"
+  },
+  {
+    "id": 14,
+    "category": "Communicator",
+    "heroName": "The Influencer",
+    "tagline": "Shapes opinion, builds presence",
+    "description": "Shapes opinion and builds a strong personal presence.",
+    "primaryColor": "Purple",
+    "secondaryColor": "Gold"
+  },
+  {
+    "id": 15,
+    "category": "Communicator",
+    "heroName": "The Clarifier",
+    "tagline": "Cuts through the noise",
+    "description": "Makes complex ideas simple, ensuring messages land with crystal clarity.",
+    "primaryColor": "Purple",
+    "secondaryColor": "Gold"
+  },
+  {
+    "id": 16,
+    "category": "Growth Driver",
+    "heroName": "The Strategist",
+    "tagline": "Designs bold, smart plans",
+    "description": "Builds bold, purposeful strategies.",
+    "primaryColor": "Black",
+    "secondaryColor": "Emerald"
+  },
+  {
+    "id": 17,
+    "category": "Growth Driver",
+    "heroName": "The Unifier",
+    "tagline": "Brings diverse needs together",
+    "description": "Aligns diverse needs into one direction.",
+    "primaryColor": "Black",
+    "secondaryColor": "Emerald"
+  },
+  {
+    "id": 18,
+    "category": "Growth Driver",
+    "heroName": "The Balancer",
+    "tagline": "Holds short- and long-term steady",
+    "description": "Juggles short- and long-term priorities with skill.",
+    "primaryColor": "Black",
+    "secondaryColor": "Emerald"
+  },
+  {
+    "id": 19,
+    "category": "Growth Driver",
+    "heroName": "The Builder",
+    "tagline": "Creates solid, lasting solutions",
+    "description": "Designs strong, commercially sound solutions.",
+    "primaryColor": "Black",
+    "secondaryColor": "Emerald"
+  },
+  {
+    "id": 20,
+    "category": "Growth Driver",
+    "heroName": "The Executor",
+    "tagline": "Turns vision into results",
+    "description": "Turns strategies into disciplined action and delivery.",
+    "primaryColor": "Black",
+    "secondaryColor": "Emerald"
+  },
+  {
+    "id": 21,
+    "category": "Judgement Maker",
+    "heroName": "The Humble Sage",
+    "tagline": "Knows what they don’t know",
+    "description": "Admits limits and learns from others.",
+    "primaryColor": "Dark Grey",
+    "secondaryColor": "Crimson"
+  },
+  {
+    "id": 22,
+    "category": "Judgement Maker",
+    "heroName": "The Collaborator",
+    "tagline": "Decides better, together",
+    "description": "Brings others into decision-making.",
+    "primaryColor": "Dark Grey",
+    "secondaryColor": "Crimson"
+  },
+  {
+    "id": 23,
+    "category": "Judgement Maker",
+    "heroName": "The Decipherer",
+    "tagline": "Cuts through noise to clarity",
+    "description": "Cuts through complexity to focus on what matters.",
+    "primaryColor": "Dark Grey",
+    "secondaryColor": "Crimson"
+  },
+  {
+    "id": 24,
+    "category": "Judgement Maker",
+    "heroName": "The Decider",
+    "tagline": "Makes the call under pressure",
+    "description": "Makes timely, balanced calls under pressure.",
+    "primaryColor": "Dark Grey",
+    "secondaryColor": "Crimson"
+  },
+  {
+    "id": 25,
+    "category": "Judgement Maker",
+    "heroName": "The Ethicist",
+    "tagline": "Does right, not just easy",
+    "description": "Grounds decisions in strong moral conviction, even under pressure.",
+    "primaryColor": "Dark Grey",
+    "secondaryColor": "Crimson"
+  },
+  {
+    "id": 26,
+    "category": "Navigator",
+    "heroName": "The Listener",
+    "tagline": "Keeps a pulse on people",
+    "description": "Keeps a pulse on employee needs and engagement.",
+    "primaryColor": "Navy Blue",
+    "secondaryColor": "Silver"
+  },
+  {
+    "id": 27,
+    "category": "Navigator",
+    "heroName": "The Integrator",
+    "tagline": "Joins up knowledge across teams",
+    "description": "Bridges knowledge across teams and markets.",
+    "primaryColor": "Navy Blue",
+    "secondaryColor": "Silver"
+  },
+  {
+    "id": 28,
+    "category": "Navigator",
+    "heroName": "The Analyst",
+    "tagline": "Reads the market with clarity",
+    "description": "Tracks competitors and market shifts with insight.",
+    "primaryColor": "Navy Blue",
+    "secondaryColor": "Silver"
+  },
+  {
+    "id": 29,
+    "category": "Navigator",
+    "heroName": "The Watchtower",
+    "tagline": "Spots trends before they hit",
+    "description": "Spots customer trends and brings feedback inside.",
+    "primaryColor": "Navy Blue",
+    "secondaryColor": "Silver"
+  },
+  {
+    "id": 30,
+    "category": "Navigator",
+    "heroName": "The Futurist",
+    "tagline": "Sees what’s coming next",
+    "description": "Spots emerging trends and anticipates future opportunities.",
+    "primaryColor": "Navy Blue",
+    "secondaryColor": "Silver"
+  },
+  {
+    "id": 31,
+    "category": "Pressure Player",
+    "heroName": "The Achiever",
+    "tagline": "Always goes for the goal",
+    "description": "Pushes to meet and beat objectives.",
+    "primaryColor": "Burgundy",
+    "secondaryColor": "Burnt Orange"
+  },
+  {
+    "id": 32,
+    "category": "Pressure Player",
+    "heroName": "The Planner",
+    "tagline": "Stays ready for every hurdle",
+    "description": "Anticipates hurdles and prepares for them.",
+    "primaryColor": "Burgundy",
+    "secondaryColor": "Burnt Orange"
+  },
+  {
+    "id": 33,
+    "category": "Pressure Player",
+    "heroName": "The Rock",
+    "tagline": "Calm when it counts",
+    "description": "Stays steady and composed in stressful moments.",
+    "primaryColor": "Burgundy",
+    "secondaryColor": "Burnt Orange"
+  },
+  {
+    "id": 34,
+    "category": "Pressure Player",
+    "heroName": "The Resilient",
+    "tagline": "Bounces back stronger",
+    "description": "Recovers from setbacks and learns from them.",
+    "primaryColor": "Burgundy",
+    "secondaryColor": "Burnt Orange"
+  },
+  {
+    "id": 35,
+    "category": "Pressure Player",
+    "heroName": "The Steadfast",
+    "tagline": "Unshaken in the storm",
+    "description": "Remains resolute in crises, reassuring others and holding the line when times are toughest.",
+    "primaryColor": "Burgundy",
+    "secondaryColor": "Burnt Orange"
+  },
+  {
+    "id": 36,
+    "category": "Purpose Creator",
+    "heroName": "The Visionary",
+    "tagline": "Sees tomorrow, inspires today",
+    "description": "Defines a purpose with real impact.",
+    "primaryColor": "Gold",
+    "secondaryColor": "Royal Blue"
+  },
+  {
+    "id": 37,
+    "category": "Purpose Creator",
+    "heroName": "The Flame",
+    "tagline": "Passion that ignites others",
+    "description": "Shows passion and energy for direction.",
+    "primaryColor": "Gold",
+    "secondaryColor": "Royal Blue"
+  },
+  {
+    "id": 38,
+    "category": "Purpose Creator",
+    "heroName": "The Storyteller",
+    "tagline": "Makes meaning unforgettable",
+    "description": "Brings purpose to life through compelling stories.",
+    "primaryColor": "Gold",
+    "secondaryColor": "Royal Blue"
+  },
+  {
+    "id": 39,
+    "category": "Purpose Creator",
+    "heroName": "The Guardian",
+    "tagline": "Stands firm for what’s right",
+    "description": "Stands for fairness, ethics, and doing the right thing.",
+    "primaryColor": "Gold",
+    "secondaryColor": "Royal Blue"
+  },
+  {
+    "id": 40,
+    "category": "Purpose Creator",
+    "heroName": "The Beacon",
+    "tagline": "Lights the way forward",
+    "description": "Radiates purpose consistently, guiding others with steady principles.",
+    "primaryColor": "Gold",
+    "secondaryColor": "Royal Blue"
+  },
+  {
+    "id": 41,
+    "category": "Results Driver",
+    "heroName": "The Standard-Bearer",
+    "tagline": "Raises the bar for all",
+    "description": "Sets clear, stretching expectations.",
+    "primaryColor": "Bright Blue",
+    "secondaryColor": "Light Grey"
+  },
+  {
+    "id": 42,
+    "category": "Results Driver",
+    "heroName": "The Judge",
+    "tagline": "Keeps standards fair and firm",
+    "description": "Keeps performance fair and accountable.",
+    "primaryColor": "Bright Blue",
+    "secondaryColor": "Light Grey"
+  },
+  {
+    "id": 43,
+    "category": "Results Driver",
+    "heroName": "The Cheerleader",
+    "tagline": "Celebrates wins with energy",
+    "description": "Recognises and celebrates wins.",
+    "primaryColor": "Bright Blue",
+    "secondaryColor": "Light Grey"
+  },
+  {
+    "id": 44,
+    "category": "Results Driver",
+    "heroName": "The Empowerer",
+    "tagline": "Hands over trust and authority",
+    "description": "Delegates and trusts others with authority.",
+    "primaryColor": "Bright Blue",
+    "secondaryColor": "Light Grey"
+  },
+  {
+    "id": 45,
+    "category": "Results Driver",
+    "heroName": "The Energiser",
+    "tagline": "Lifts the room, fuels momentum",
+    "description": "Boosts morale and inspires energy in others.",
+    "primaryColor": "Bright Blue",
+    "secondaryColor": "Light Grey"
+  },
+  {
+    "id": 46,
+    "category": "Self-Grower",
+    "heroName": "The Reflector",
+    "tagline": "Sees self clearly",
+    "description": "Stays aware of personal strengths and blind spots.",
+    "primaryColor": "Lime Green",
+    "secondaryColor": "Pink"
+  },
+  {
+    "id": 47,
+    "category": "Self-Grower",
+    "heroName": "The Learner",
+    "tagline": "Hungry for growth",
+    "description": "Actively seeks new skills and experiences.",
+    "primaryColor": "Lime Green",
+    "secondaryColor": "Pink"
+  },
+  {
+    "id": 48,
+    "category": "Self-Grower",
+    "heroName": "The Alchemist",
+    "tagline": "Turns lessons into gold",
+    "description": "Turns lessons into better outcomes.",
+    "primaryColor": "Lime Green",
+    "secondaryColor": "Pink"
+  },
+  {
+    "id": 49,
+    "category": "Self-Grower",
+    "heroName": "The Seeker",
+    "tagline": "Always chasing knowledge",
+    "description": "Searches for knowledge that benefits all.",
+    "primaryColor": "Lime Green",
+    "secondaryColor": "Pink"
+  },
+  {
+    "id": 50,
+    "category": "Self-Grower",
+    "heroName": "The Experimenter",
+    "tagline": "Learns by trying new paths",
+    "description": "Constantly tests new approaches, learns fast from trial and error, and adapts quickly.",
+    "primaryColor": "Lime Green",
+    "secondaryColor": "Pink"
+  },
+  {
+    "id": 51,
+    "category": "Team Builder",
+    "heroName": "The Coach",
+    "tagline": "Turns feedback into growth",
+    "description": "Builds a culture of constructive feedback.",
+    "primaryColor": "Orange",
+    "secondaryColor": "Lavender"
+  },
+  {
+    "id": 52,
+    "category": "Team Builder",
+    "heroName": "The Mentor",
+    "tagline": "Shares wisdom, shapes futures",
+    "description": "Develops people through guidance and shared experience.",
+    "primaryColor": "Orange",
+    "secondaryColor": "Lavender"
+  },
+  {
+    "id": 53,
+    "category": "Team Builder",
+    "heroName": "The Talent-Scout",
+    "tagline": "Spots tomorrow’s leaders today",
+    "description": "Spots and grows future leaders.",
+    "primaryColor": "Orange",
+    "secondaryColor": "Lavender"
+  },
+  {
+    "id": 54,
+    "category": "Team Builder",
+    "heroName": "The Protector",
+    "tagline": "Keeps learning spaces safe",
+    "description": "Creates psychological safety for learning and mistakes.",
+    "primaryColor": "Orange",
+    "secondaryColor": "Lavender"
+  },
+  {
+    "id": 55,
+    "category": "Team Builder",
+    "heroName": "The Harmoniser",
+    "tagline": "Keeps the team in tune",
+    "description": "Balances personalities and perspectives, resolving conflict and fostering cohesion.",
+    "primaryColor": "Orange",
+    "secondaryColor": "Lavender"
+  },
+  {
+    "id": 56,
+    "category": "Trust Builder",
+    "heroName": "The Empath",
+    "tagline": "Feels what others feel",
+    "description": "Tunes into others’ feelings and responds with care.",
+    "primaryColor": "Forest Green",
+    "secondaryColor": "White"
+  },
+  {
+    "id": 57,
+    "category": "Trust Builder",
+    "heroName": "The Truth-Teller",
+    "tagline": "Says it straight, earns respect",
+    "description": "Shares views honestly and transparently.",
+    "primaryColor": "Forest Green",
+    "secondaryColor": "White"
+  },
+  {
+    "id": 58,
+    "category": "Trust Builder",
+    "heroName": "The Open Heart",
+    "tagline": "Leads with honesty and humility",
+    "description": "Shows vulnerability and admits challenges.",
+    "primaryColor": "Forest Green",
+    "secondaryColor": "White"
+  },
+  {
+    "id": 59,
+    "category": "Trust Builder",
+    "heroName": "The Bridge-Builder",
+    "tagline": "Connects people with trust",
+    "description": "Builds respectful, trusting relationships with ease.",
+    "primaryColor": "Forest Green",
+    "secondaryColor": "White"
+  },
+  {
+    "id": 60,
+    "category": "Trust Builder",
+    "heroName": "The Advocate",
+    "tagline": "Makes every voice count",
+    "description": "Champions diversity and inclusion so all perspectives are heard.",
+    "primaryColor": "Forest Green",
+    "secondaryColor": "White"
   }
 ]
