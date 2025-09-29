@@ -4,17 +4,17 @@
     "explainer": "Two organisations are merging. Align cultures and keep employees engaged.",
     "difficulty": "Easy",
     "thresholds": {
-      "Border Crosser": 18,
-      "Change Maker": 20,
+      "Border Crosser": 12,
+      "Change Maker": 16,
       "Communicator": 10,
       "Growth Driver": 6,
-      "Judgement Maker": 16,
+      "Judgement Maker": 14,
       "Navigator": 11,
       "Pressure Player": 7,
-      "Purpose Creator": 15,
+      "Purpose Creator": 11,
       "Results Driver": 8,
       "Self-Grower": 7,
-      "Team Builder": 18,
+      "Team Builder": 11,
       "Trust Builder": 15
     }
   },
@@ -24,16 +24,16 @@
     "difficulty": "Easy",
     "thresholds": {
       "Border Crosser": 6,
-      "Change Maker": 18,
+      "Change Maker": 11,
       "Communicator": 7,
       "Growth Driver": 7,
       "Judgement Maker": 10,
-      "Navigator": 18,
+      "Navigator": 12,
       "Pressure Player": 11,
       "Purpose Creator": 7,
-      "Results Driver": 15,
+      "Results Driver": 13,
       "Self-Grower": 11,
-      "Team Builder": 14,
+      "Team Builder": 12,
       "Trust Builder": 10
     }
   },
@@ -42,7 +42,7 @@
     "explainer": "Uncertainty spreads worldwide. Steady operations and protect people.",
     "difficulty": "Easy",
     "thresholds": {
-      "Border Crosser": 14,
+      "Border Crosser": 11,
       "Change Maker": 9,
       "Communicator": 7,
       "Growth Driver": 7,
@@ -52,7 +52,7 @@
       "Purpose Creator": 15,
       "Results Driver": 8,
       "Self-Grower": 7,
-      "Team Builder": 20,
+      "Team Builder": 16,
       "Trust Builder": 6
     }
   },
@@ -71,8 +71,8 @@
       "Purpose Creator": 12,
       "Results Driver": 10,
       "Self-Grower": 11,
-      "Team Builder": 25,
-      "Trust Builder": 18
+      "Team Builder": 14,
+      "Trust Builder": 12
     }
   },
   {
@@ -85,11 +85,11 @@
       "Communicator": 8,
       "Growth Driver": 14,
       "Judgement Maker": 15,
-      "Navigator": 20,
+      "Navigator": 16,
       "Pressure Player": 10,
       "Purpose Creator": 11,
-      "Results Driver": 20,
-      "Self-Grower": 17,
+      "Results Driver": 14,
+      "Self-Grower": 14,
       "Team Builder": 10,
       "Trust Builder": 8
     }
@@ -99,16 +99,16 @@
     "explainer": "New laws disrupt your business model. Leaders must respond.",
     "difficulty": "Normal",
     "thresholds": {
-      "Border Crosser": 21,
+      "Border Crosser": 18,
       "Change Maker": 11,
       "Communicator": 12,
       "Growth Driver": 12,
-      "Judgement Maker": 20,
-      "Navigator": 20,
-      "Pressure Player": 18,
+      "Judgement Maker": 16,
+      "Navigator": 17,
+      "Pressure Player": 15,
       "Purpose Creator": 13,
       "Results Driver": 14,
-      "Self-Grower": 18,
+      "Self-Grower": 12,
       "Team Builder": 12,
       "Trust Builder": 13
     }
@@ -121,10 +121,10 @@
       "Border Crosser": 12,
       "Change Maker": 13,
       "Communicator": 14,
-      "Growth Driver": 16,
+      "Growth Driver": 12,
       "Judgement Maker": 22,
-      "Navigator": 23,
-      "Pressure Player": 30,
+      "Navigator": 21,
+      "Pressure Player": 25,
       "Purpose Creator": 13,
       "Results Driver": 17,
       "Self-Grower": 13,
@@ -144,7 +144,7 @@
       "Judgement Maker": 14,
       "Navigator": 13,
       "Pressure Player": 17,
-      "Purpose Creator": 30,
+      "Purpose Creator": 25,
       "Results Driver": 17,
       "Self-Grower": 10,
       "Team Builder": 17,
@@ -157,14 +157,14 @@
     "difficulty": "Normal",
     "thresholds": {
       "Border Crosser": 16,
-      "Change Maker": 30,
+      "Change Maker": 19,
       "Communicator": 21,
       "Growth Driver": 16,
       "Judgement Maker": 17,
-      "Navigator": 30,
+      "Navigator": 24,
       "Pressure Player": 11,
       "Purpose Creator": 13,
-      "Results Driver": 22,
+      "Results Driver": 18,
       "Self-Grower": 12,
       "Team Builder": 16,
       "Trust Builder": 16
